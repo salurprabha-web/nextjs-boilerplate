@@ -56,9 +56,9 @@ export default function Navigation() {
                   (link.name === "Services" ? setIsServicesOpen(!isServicesOpen) : setIsIndustriesOpen(!isIndustriesOpen))
                   : null
                 }
-                className={`flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                className={`flex items-center space-x-1 px-3 py-3 rounded-md text-sm font-medium transition-colors duration-200 ${
                   mobile 
-                    ? "text-gray-700 hover:text-orange-600 w-full text-left justify-between"
+                    ? "text-gray-900 hover:text-orange-600 hover:bg-gray-50 w-full text-left justify-between"
                     : "text-gray-700 hover:text-orange-600"
                 }`}
               >
@@ -72,7 +72,7 @@ export default function Navigation() {
                     <div key={dropdownLink.name} className="mb-3">
                       <Link
                         href={dropdownLink.href}
-                        className="block px-3 py-2 text-sm font-medium text-gray-700 hover:text-orange-600 hover:bg-gray-50 rounded-md"
+                        className="block px-3 py-2 text-sm font-medium text-gray-700 hover:text-orange-600 hover:bg-gray-50 rounded-md transition-colors duration-200"
                         onClick={() => setIsOpen(false)}
                       >
                         {dropdownLink.name}
@@ -108,9 +108,9 @@ export default function Navigation() {
           ) : (
             <Link
               href={link.href}
-              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+              className={`px-3 py-3 rounded-md text-sm font-medium transition-colors duration-200 ${
                 mobile 
-                  ? "text-gray-700 hover:text-orange-600 block"
+                  ? "text-gray-900 hover:text-orange-600 hover:bg-gray-50 block"
                   : "text-gray-700 hover:text-orange-600"
               }`}
               onClick={() => mobile && setIsOpen(false)}
@@ -160,18 +160,18 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-2 flex-shrink-0">
-            <a href="tel:8871857876">
+            <a href="tel:9063679687">
               <Button variant="outline" size="sm" className="text-gray-700 border-gray-300">
                 <Phone className="w-4 h-4" />
               </Button>
             </a>
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="sm" className="text-gray-700">
+                <Button variant="ghost" size="sm" className="text-gray-700 hover:bg-gray-100">
                   <Menu className="w-5 h-5" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-80">
+              <SheetContent side="right" className="w-80 !bg-white !text-gray-900 border-l border-gray-200 p-6">
                 <div className="flex flex-col h-full">
                   {/* Logo */}
                   <div className="flex items-center space-x-3 mb-8">
@@ -183,8 +183,10 @@ export default function Navigation() {
                   </div>
 
                   {/* Navigation */}
-                  <nav className="flex-1">
-                    <NavItems mobile={true} />
+                  <nav className="flex-1 overflow-y-auto">
+                    <div className="space-y-1">
+                      <NavItems mobile={true} />
+                    </div>
                   </nav>
 
                   {/* Contact Info */}
@@ -192,7 +194,7 @@ export default function Navigation() {
                     <div className="space-y-3">
                       <div className="flex items-center text-sm text-gray-600">
                         <Phone className="w-4 h-4 mr-3 text-orange-500" />
-                        <span>8871857876</span>
+                        <span>9063679687</span>
                       </div>
                       <div className="flex items-center text-sm text-gray-600">
                         <Mail className="w-4 h-4 mr-3 text-orange-500" />
@@ -202,11 +204,11 @@ export default function Navigation() {
                     
                     <div className="mt-6 space-y-3">
                       <Link href="/quote">
-                        <Button size="sm" className="w-full bg-orange-500 hover:bg-orange-600">
+                        <Button size="sm" className="w-full bg-orange-500 hover:bg-orange-600 text-white">
                           Get Quote
                         </Button>
                       </Link>
-                      <Button variant="outline" size="sm" className="w-full">
+                      <Button variant="outline" size="sm" className="w-full border-gray-300 text-gray-700 hover:bg-gray-50">
                         Contact Us
                       </Button>
                     </div>
