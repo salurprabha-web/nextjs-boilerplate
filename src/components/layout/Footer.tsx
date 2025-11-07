@@ -70,7 +70,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center text-gray-300">
                 <Phone className="w-4 h-4 mr-3 text-orange-500" />
-                <span>8871857876</span>
+                <span>8871857856</span>
               </div>
               <div className="flex items-center text-gray-300">
                 <Mail className="w-4 h-4 mr-3 text-orange-500" />
@@ -127,4 +127,5 @@ export default function Footer() {
       </div>
     </footer>
   );
+
 }
