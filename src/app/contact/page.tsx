@@ -66,7 +66,7 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: "Phone Number",
-      value: "8871857876",
+      value: "8871857856",
       color: "text-green-600"
     },
     {
@@ -389,4 +389,5 @@ export default function ContactPage() {
       </section>
     </div>
   );
+
 }
