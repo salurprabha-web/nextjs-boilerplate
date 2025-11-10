@@ -1,12 +1,10 @@
+// src/components/whatsapp-button-wrapper.tsx
+
 import { WhatsAppButton } from './whatsapp-button';
-import { getSiteSettings } from '@/lib/settings';
 
-export async function WhatsAppButtonWrapper() {
-  const settings = await getSiteSettings();
+export function WhatsAppButtonWrapper() {
+  // Static WhatsApp number
+  const whatsappNumber = "9063679687";
 
-  if (!settings.whatsapp_number) {
-    return null;
-  }
-
-  return <WhatsAppButton whatsappNumber={settings.whatsapp_number} />;
+  return <WhatsAppButton whatsappNumber={whatsappNumber} />;
 }
